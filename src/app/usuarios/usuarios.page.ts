@@ -19,8 +19,8 @@ export class UsuariosPage implements OnInit {
 
   ngOnInit() {
     this.ObtenerUsuarios().subscribe((res:any)=>{
-      console.log("Resultado",res.data);
-      this.usuarios = res.data;
+      console.log("Resultado",res);
+      this.usuarios = res;
     });
   }
 
@@ -30,7 +30,7 @@ export class UsuariosPage implements OnInit {
   
   ObtenerUsuarios(){
     return this.http
-    .get('assets/archivos/usuarios.json')
+    .get('https://app-examen-01.herokuapp.com/api/usuarios')
     .pipe(
       map((res:any)=>{
         return res;

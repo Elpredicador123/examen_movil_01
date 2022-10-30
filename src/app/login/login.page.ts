@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +16,20 @@ export class LoginPage implements OnInit {
 
   constructor(
     private router:Router,
-    private http:HttpClient) { }
+    private http:HttpClient,
+    private alertController: AlertController) { }
 
   ngOnInit() {
+  }
+  async presentAlert(texto:any) {
+    const alert = await this.alertController.create({
+      header: 'Aviso',
+      subHeader: 'Importante',
+      message: texto,
+      buttons: ['OK'],
+    });
+
+    await alert.present();
   }
 
   login(){
@@ -29,11 +41,14 @@ export class LoginPage implements OnInit {
         let usuario = this.usuarios.filter((usuario:any) => {
           return usuario.usuario == this.usuario.usuario && usuario.password == this.usuario.password;
         } );
-        usuario[0]?this.router.navigate(['/usuarios']):"";
+        this.usuario={};
+        if(usuario.length > 0){
+          this.presentAlert("Inicio de Sesion correctamente");
+          this.router.navigate(['/usuarios']);
+        }else
+        {
+          this.presentAlert("No coinciden los campos");
+        }
       });
-  //   fetch('https://app-examen-01.herokuapp.com/api/usuarios')
-  // .then(response => response.json())
-  // .then(response => console.log(response))
-  // .catch(err => console.error(err));
   }
 }

@@ -2,7 +2,7 @@
   <ion-card-header>
     <ion-card-title>Iniciar Sesion</ion-card-title>
     <ion-card-subtitle>
-      Examen 01 Movil - 2022
+      Examen 01 Movil - 2022 - UNT
       <br>
       Integrantes: 
     <br>
@@ -11,7 +11,6 @@
     Piminchumo Olivos, Gustavo Enrique
     </ion-card-subtitle>
   </ion-card-header>
-
   <ion-card-content>
     <ion-item>
       <ion-label position="floating">Usuario</ion-label>
@@ -21,7 +20,11 @@
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input [(ngModel)]="usuario.password" type="password"  placeholder="Enter text"></ion-input>
-    </ion-item>
+    </ion-item> 
+<div style="margin: 1em .5em;">
+  No tienes una cuenta
+  <a ion-button [routerLink]="['/register']">Registrate</a>
+</div>
   </ion-card-content>
 
   <ion-button (click)="login()" expand="block" >
