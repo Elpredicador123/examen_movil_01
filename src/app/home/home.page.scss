@@ -1,0 +1,22 @@
+ion-toolbar{
+    background-color: var(--ion-color-defcolor);
+}
+.btn{
+    background-color: var(--ion-color-defcolor-shade);
+    color: white;
+    padding: .5em 1em;
+    border-radius: 10px;
+    font-size: 15px;
+}
+#contenedor{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.texto{
+    background-color:yellowgreen;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
