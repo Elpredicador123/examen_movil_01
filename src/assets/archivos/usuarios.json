@@ -1,0 +1,25 @@
+{
+    "data" : [
+    {       "nombre":"Jerson Jesus Saavedra Neira",
+            "correo":"jjsn@gmail.com",
+            "usuario":"Jesus",
+            "password":"123456",
+            "foto":"avatar-finn.png",
+            "estado":true
+    },
+    {       "nombre":"Jerson Jesus Saavedra Neira 02",
+            "correo":"jjsn02@gmail.com",
+            "usuario":"Jesus02",
+            "password":"123456",
+            "foto":"avatar-han.png",
+            "estado":true
+    },
+    {       "nombre":"Jerson Jesus Saavedra Neira 03",
+            "correo":"jjsn03@gmail.com",
+            "usuario":"Jesus03",
+            "password":"123456",
+            "foto":"avatar-luke.png",
+            "estado":true
+    }
+    ]
+}
